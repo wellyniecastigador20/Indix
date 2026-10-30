@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barangay Lambunao Management System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- LOGIN PAGE -->
+<section id="loginPage" class="login-container">
+    <aside class="login-sidebar">
+        <div class="logo">
+            <div class="logo-icon">BL</div>
+            <h2>Brgy. Lambunao</h2>
+        </div>
+
+        <div class="sidebar-content">
+            <h1>Welcome to<br>Barangay Lambunao</h1>
+            <p>Your digital gateway to barangay services,
+               resident records, and document requests.</p>
+        </div>
+
+        <div class="sidebar-footer">
+            <p>Barangay Lambunao, Iloilo</p>
+            <p>Barangay Management System</p>
+        </div>
+    </aside>
+
+    <main class="login-main">
+        <div class="login-box">
+            <div class="welcome-label">WELCOME BACK</div>
+            <h1>Sign in to your account</h1>
+            <p class="description">
+                Enter your credentials to access your dashboard.
+            </p>
+
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="role">Select your role</label>
+                    <select id="role" required>
+                        <option value="resident">Resident</option>
+                        <option value="staff">Barangay Staff</option>
+                        <option value="admin">Administrator</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="text" id="username"
+                           placeholder="Enter your username" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password"
+                           placeholder="Enter your password" required>
+                </div>
+
+                <div class="form-options">
+                    <label>
+                        <input type="checkbox" id="remember">
+                        Remember me
+                    </label>
+                    <a href="#" id="forgot">Forgot password?</a>
+                </div>
+
+                <p id="message" role="alert"></p>
+
+                <button type="submit" class="login-button">
+                    Sign In
+                </button>
+            </form>
+
+            <div class="login-footer">
+                Need assistance?<br>
+                Contact your barangay administrator.
+            </div>
+        </div>
+    </main>
+</section>
+
+<!-- DASHBOARD -->
+<section id="dashboardPage" class="dashboard-layout">
+    <aside class="dashboard-sidebar">
+        <div class="brand">
+            <div class="logo-icon">BL</div>
+            <div>
+                <strong>Brgy. Lambunao</strong>
+                <small>Iloilo</small>
+            </div>
+        </div>
+
+        <nav class="sidebar-nav">
+            <a href="#dashboard" class="active">▦ Dashboard</a>
+            <a href="#residents">♟ Residents</a>
+            <a href="#requests">▤ Document Requests</a>
+        </nav>
+
+        <div class="sidebar-bottom">
+            <div class="user-info">
+                <strong id="displayUsername">User</strong>
+                <small id="displayRole">Resident</small>
+            </div>
+
+            <button type="button" class="logout-button" id="logoutButton">
+                ↪ Logout
+            </button>
+        </div>
+    </aside>
+
+    <main class="dashboard-main" id="dashboard">
+        <header class="dashboard-header">
+            <div>
+                <h1>Dashboard</h1>
+                <p id="today">Barangay Lambunao, Iloilo</p>
+            </div>
+            <div>Welcome, <strong id="welcomeName">User</strong></div>
+        </header>
+
+        <!-- SUMMARY CARDS -->
+        <section class="stats-grid">
+            <article class="stat-card">
+                <span class="stat-icon purple">♟</span>
+                <h2>1,284</h2>
+                <p>Total Residents</p>
+                <small>↑ 14 this month</small>
+            </article>
+
+            <article class="stat-card">
+                <span class="stat-icon orange">▤</span>
+                <h2>23</h2>
+                <p>Pending Requests</p>
+                <small>Needs attention</small>
+            </article>
+
+            <article class="stat-card">
+                <span class="stat-icon green">✓</span>
+                <h2>8</h2>
+                <p>Approved Today</p>
+                <small>Documents released</small>
+            </article>
+
+            <article class="stat-card">
+                <span class="stat-icon blue">NEW</span>
+                <h2>14</h2>
+                <p>New This Month</p>
+                <small>Registered residents</small>
+            </article>
+        </section>
+
+        <!-- REQUESTS AND ACTIVITY -->
+        <section class="content-grid">
+            <article class="panel" id="requests">
+                <div class="panel-heading">
+                    <h3>Recent Document Requests</h3>
+                    <a href="#requests">View all →</a>
+                </div>
+
+                <div class="table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Req #</th>
+                                <th>Resident</th>
+                                <th>Document</th>
+                                <th>Date</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>001</td>
+                                <td>chanzy whizz</td>
+                                <td>Barangay Clearance</td>
+                                <td>Oct 16</td>
+                                <td><span class="status pending">Pending</span></td>
+                            </tr>
+                            <tr>
+                                <td>002</td>
+                                <td>wellynie castigador</td>
+                                <td>Certificate of Residency</td>
+                                <td>Oct 16</td>
+                                <td><span class="status approved">Approved</span></td>
+                            </tr>
+                            <tr>
+                                <td>003</td>
+                                <td>shyla mae </td>
+                                <td>Indigency Certificate</td>
+                                <td>Oct 15</td>
+                                <td><span class="status pending">Pending</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </article>
+
+            <article class="panel">
+                <h3>Activity Log</h3>
+
+                <div class="activity-item">
+                    <span class="activity-dot"></span>
+                    <div>
+                        <strong>Request #004</strong>
+                        <p>Document request submitted</p>
+                        <small>Today</small>
+                    </div>
+                </div>
+
+                <div class="activity-item">
+                    <span class="activity-dot green-dot"></span>
+                    <div>
+                        <strong>Request #003</strong>
+                        <p>Request awaiting review</p>
+                        <small>Today</small>
+                    </div>
+                </div>
+
+                <div class="activity-item">
+                    <span class="activity-dot orange-dot"></span>
+                    <div>
+                        <strong>Resident Registration</strong>
+                        <p>New resident added</p>
+                        <small>Yesterday</small>
+                    </div>
+                </div>
+            </article>
+        </section>
+
+        <!-- RESIDENTS -->
+        <section class="panel residents-panel" id="residents">
+            <h3>Residents</h3>
+            <p>
+                Resident records will appear here when connected
+                to a database.
+            </p>
+        </section>
+
+        <footer class="dashboard-footer">
+            Barangay Lambunao Management System
+        </footer>
+    </main>
+</section>
+
+<script>
+const accounts = {
+    admin: {
+        username: "admin",
+        password: "admin123"
+    },
+    staff: {
+        username: "staff",
+        password: "staff123"
+    },
+    resident: {
+        username: "resident",
+        password: "resident123"
+    }
+};
+
+const loginPage = document.getElementById("loginPage");
+const dashboardPage = document.getElementById("dashboardPage");
+const loginForm = document.getElementById("loginForm");
+
+function showLogin() {
+    loginPage.style.display = "flex";
+    dashboardPage.style.display = "none";
+}
+
+function showDashboard() {
+    const username = sessionStorage.getItem("username");
+    const role = sessionStorage.getItem("role");
+
+    if (!username || !role) {
+        showLogin();
+        return;
+    }
+
+    loginPage.style.display = "none";
+    dashboardPage.style.display = "flex";
+
+    document.getElementById("displayUsername").textContent = username;
+    document.getElementById("welcomeName").textContent = username;
+
+    document.getElementById("displayRole").textContent =
+        role.charAt(0).toUpperCase() + role.slice(1);
+
+    document.getElementById("today").textContent =
+        new Date().toLocaleDateString("en-US", {
+            year: "numeric",
+            month: "long",
+            day: "numeric"
+        }) + " · Barangay Lambunao, Iloilo";
+}
+
+loginForm.addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    const role = document.getElementById("role").value;
+    const username = document.getElementById("username").value.trim();
+    const password = document.getElementById("password").value;
+    const message = document.getElementById("message");
+
+    const account = accounts[role];
+
+    if (username === account.username &&
+        password === account.password) {
+
+        sessionStorage.setItem("username", username);
+        sessionStorage.setItem("role", role);
+
+        message.textContent = "";
+        showDashboard();
+
+    } else {
+        message.textContent =
+            "Invalid username, password, or role.";
+    }
+});
+
+document.getElementById("logoutButton").addEventListener("click", function() {
+    sessionStorage.removeItem("username");
+    sessionStorage.removeItem("role");
+
+    loginForm.reset();
+    document.getElementById("message").textContent = "";
+
+    showLogin();
+});
+
+document.getElementById("forgot").addEventListener("click", function(event) {
+    event.preventDefault();
+    alert("Please contact your barangay administrator.");
+});
+
+showLogin();
+</script>
+
+</body>
+</html>

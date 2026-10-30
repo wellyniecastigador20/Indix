@@ -1,0 +1,525 @@
+/* GENERAL */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f3f5f9;
+    color: #263750;
+}
+
+button, input, select {
+    font: inherit;
+}
+
+button, a {
+    cursor: pointer;
+}
+
+/* LOGIN PAGE */
+.login-container {
+    display: flex;
+    min-height: 100vh;
+}
+
+.login-sidebar {
+    width: 40%;
+    background: #102344;
+    color: white;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.logo, .brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: #287ab7;
+    color: white;
+    display: grid;
+    place-items: center;
+    font-weight: bold;
+    flex-shrink: 0;
+}
+
+.logo h2 {
+    font-size: 19px;
+}
+
+.sidebar-content h1 {
+    font-size: 32px;
+    line-height: 1.4;
+    margin-bottom: 16px;
+}
+
+.sidebar-content p,
+.sidebar-footer p {
+    color: #cbd5e1;
+    line-height: 1.8;
+}
+
+.login-main {
+    flex: 1;
+    padding: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.login-box {
+    width: 100%;
+    max-width: 430px;
+}
+
+.welcome-label {
+    color: #287ab7;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-bottom: 14px;
+}
+
+.login-box h1 {
+    font-size: 27px;
+    margin-bottom: 12px;
+}
+
+.description {
+    color: #758196;
+    line-height: 1.6;
+    margin-bottom: 25px;
+}
+
+.form-group {
+    margin-bottom: 19px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 13px;
+    border: 1px solid #dce2eb;
+    border-radius: 7px;
+    background: white;
+}
+
+.form-options {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 20px;
+    font-size: 13px;
+}
+
+.form-options a {
+    color: #287ab7;
+    text-decoration: none;
+}
+
+.login-button {
+    width: 100%;
+    padding: 14px;
+    background: #173b68;
+    color: white;
+    border: none;
+    border-radius: 7px;
+    font-weight: bold;
+}
+
+.login-button:hover {
+    background: #24568d;
+}
+
+#message {
+    color: #c62828;
+    font-size: 13px;
+    margin-bottom: 12px;
+}
+
+.login-footer {
+    margin-top: 25px;
+    text-align: center;
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+/* DASHBOARD */
+.dashboard-layout {
+    display: none;
+    min-height: 100vh;
+}
+
+.dashboard-sidebar {
+    width: 235px;
+    flex-shrink: 0;
+    background: #102344;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    padding: 20px 12px;
+}
+
+.brand {
+    padding: 0 8px 28px;
+    font-size: 13px;
+}
+
+.brand .logo-icon {
+    width: 38px;
+    height: 38px;
+    font-size: 12px;
+}
+
+.brand small {
+    display: block;
+    color: #aabbd1;
+    margin-top: 5px;
+}
+
+.sidebar-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.sidebar-nav a {
+    display: block;
+    padding: 12px;
+    border-radius: 5px;
+    color: #cbd5e1;
+    font-size: 13px;
+    text-decoration: none;
+}
+
+.sidebar-nav a:hover,
+.sidebar-nav a.active {
+    background: #24549b;
+    color: white;
+}
+
+.sidebar-bottom {
+    margin-top: auto;
+    padding: 20px 8px 0;
+}
+
+.user-info {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-bottom: 15px;
+    overflow-wrap: anywhere;
+}
+
+.user-info small {
+    color: #aabbd1;
+}
+
+.logout-button {
+    width: 100%;
+    padding: 11px;
+    border: none;
+    border-radius: 6px;
+    background: #263b59;
+    color: white;
+}
+
+.logout-button:hover {
+    background: #a93232;
+}
+
+.dashboard-main {
+    flex: 1;
+    min-width: 0;
+    padding: 30px;
+}
+
+.dashboard-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    margin-bottom: 28px;
+}
+
+.dashboard-header h1 {
+    font-size: 30px;
+    margin-bottom: 8px;
+}
+
+.dashboard-header p {
+    color: #758196;
+    font-size: 14px;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 18px;
+    margin-bottom: 25px;
+}
+
+.stat-card,
+.panel {
+    padding: 20px;
+    background: white;
+    border: 1px solid #e8edf4;
+    border-radius: 10px;
+}
+ 
+.stat-icon {
+    display: inline-grid;
+    place-items: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 7px;
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.purple {
+    color: #6545a4;
+    background: #eee7ff;
+}
+
+.orange {
+    color: #b97817;
+    background: #fff0d8;
+}
+
+.green {
+    color: #25875c;
+    background: #dff7e9;
+}
+
+.blue {
+    color: #287ab7;
+    background: #e2efff;
+}
+
+.stat-card h2 {
+    font-size: 29px;
+    margin-bottom: 7px;
+}
+
+.stat-card p {
+    color: #566477;
+    font-size: 14px;
+    line-height: 1.5;
+    margin-bottom: 8px;
+}
+
+.stat-card small {
+    color: #8792a3;
+    font-size: 12px;
+}
+
+.content-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 2fr) minmax(220px, 1fr);
+    gap: 20px;
+    align-items: start;
+    margin-bottom: 22px;
+}
+
+.panel h3 {
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.panel-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+}
+
+.panel-heading a {
+    color: #287ab7;
+    font-size: 12px;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.table-wrapper {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    font-size: 12px;
+}
+
+th, td {
+    padding: 14px 10px;
+    border-bottom: 1px solid #edf0f5;
+    white-space: nowrap;
+}
+
+th {
+    color: #768397;
+    font-weight: normal;
+}
+
+.status {
+    display: inline-block;
+    padding: 5px 9px;
+    border-radius: 20px;
+    font-size: 11px;
+}
+
+.pending {
+    color: #a66b10;
+    background: #fff0d6;
+}
+
+.approved {
+    color: #218052;
+    background: #dcf7e8;
+}
+
+.activity-item {
+    display: flex;
+    gap: 12px;
+    margin: 22px 0;
+    font-size: 12px;
+}
+
+.activity-item p {
+    color: #6d798b;
+    margin: 7px 0;
+}
+
+.activity-item small {
+    color: #98a1af;
+}
+
+.activity-dot {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: #287ab7;
+    flex-shrink: 0;
+    margin-top: 3px;
+}
+
+.green-dot {
+    background: #2ca66c;
+}
+
+.orange-dot {
+    background: #d99a2b;
+}
+
+.residents-panel p {
+    color: #6d798b;
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+.dashboard-footer {
+    padding: 25px 0 5px;
+    text-align: center;
+    color: #8b95a5;
+    font-size: 12px;
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 1000px) {
+    .stats-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .content-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 700px) {
+    .login-container {
+        flex-direction: column;
+    }
+
+    .login-sidebar {
+        width: 100%;
+        padding: 25px;
+        gap: 30px;
+    }
+
+    .sidebar-content h1 {
+        font-size: 25px;
+    }
+
+    .login-main {
+        padding: 30px 20px;
+    }
+
+    .dashboard-layout {
+        flex-direction: column;
+    }
+
+    .dashboard-sidebar {
+        width: 100%;
+    }
+
+    .sidebar-nav {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .sidebar-bottom {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+    }
+
+    .user-info {
+        margin-bottom: 0;
+    }
+
+    .logout-button {
+        width: auto;
+    }
+
+    .dashboard-main {
+        padding: 18px 12px;
+    }
+
+    .dashboard-header {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .stats-grid {
+        gap: 10px;
+    }
+
+    .stat-card {
+        padding: 14px;
+    }
+
+    .stat-card h2 {
+        font-size: 23px;
+    }
+}
